@@ -1,0 +1,24 @@
+name: 'GitHub App Authentication'
+description: 'Get temporary GitHub API credentials using a GitHub App'
+inputs:
+  appId:
+    description: 'App ID of the GitHub App (see App Settings > General > About)'
+    required: true
+  clientId:
+    description: 'Client ID of the GitHub App (e.g. Iv1.*********)'
+    required: true
+  clientSecret:
+    description: 'Client secret of the GitHub App'
+    required: true
+  privateKey:
+    description: 'Private key of the GitHub App'
+    required: true
+  installationId:
+    description: 'The installation id of the GitHub App'
+    required: true
+outputs:
+  token:
+    description: 'An access token that can be used to call the GitHub API'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
