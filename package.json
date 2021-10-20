@@ -21,6 +21,6 @@
     "@octokit/auth-app": "^3.6.1"
   },
   "devDependencies": {
-    "jest": "^27.3.0"
+    "jest": "^27.3.1"
   }
 }
