@@ -1,4 +1,4 @@
-const { authenticate } = require('../src/authenticate');
+const { authenticate } = require('../src/index');
 
 describe('authenticate', () => {
     test('when successful', async () => {
