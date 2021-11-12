@@ -1,7 +1,7 @@
-const { authenticate } = require('../src/index');
+const { authenticate } = require("../src/index");
 
-describe('authenticate', () => {
-    test('when successful', async () => {
+describe("authenticate", () => {
+    test("when successful", async () => {
         const authMock = jest.fn();
         const getInputMock = jest.fn();
         const setOutputMock = jest.fn();
@@ -12,7 +12,7 @@ describe('authenticate', () => {
                 type: "installation",
                 installationId: "InstallationID",
             });
-            return { token: "AUTHENTICATION_TOKEN" }
+            return { token: "AUTHENTICATION_TOKEN" };
         });
 
         getInputMock
@@ -57,7 +57,7 @@ describe('authenticate', () => {
         ["clientId", 2],
         ["clientSecret", 3],
         ["installationId", 4],
-    ]
+    ];
 
     test.each(wrongInputCases)("when input %s is missing", async (parameter, number) => {
         const authMock = jest.fn();
@@ -67,10 +67,10 @@ describe('authenticate', () => {
 
         authMock.mockReturnValue((options) => {
             expect(options).toStrictEqual({ type: "app" });
-            return { token: "AUTHENTICATION_TOKEN" }
+            return { token: "AUTHENTICATION_TOKEN" };
         });
 
-        var calledTimes = 0
+        var calledTimes = 0;
         getInputMock.mockImplementation(() => {
             if (calledTimes == number) {
                 throw new Error("input error");
@@ -90,7 +90,7 @@ describe('authenticate', () => {
         expect(setFailedMock.mock.calls[0][0]).toBe("input error");
     });
 
-    test('when authentication is failing', async () => {
+    test("when authentication is failing", async () => {
         const authMock = jest.fn();
         const getInputMock = jest.fn();
         const setOutputMock = jest.fn();
@@ -122,4 +122,4 @@ describe('authenticate', () => {
         expect(setFailedMock.mock.calls.length).toBe(1);
         expect(setFailedMock.mock.calls[0][0]).toBe("auth fails");
     });
-})
+});
