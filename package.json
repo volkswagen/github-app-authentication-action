@@ -15,6 +15,10 @@
     "github",
     "authentication"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/volkswagen/github-app-authentication-action"
+  },
   "author": "Lars Gohr <elgohr@oss.volkswagen.com>",
   "license": "MIT",
   "dependencies": {
@@ -23,7 +27,7 @@
     "@octokit/auth-app": "^3.6.1"
   },
   "devDependencies": {
-    "@zeit/ncc": "^0.22.3",
+    "@vercel/ncc": "^0.31.1",
     "eslint": "^8.2.0",
     "eslint-config-airbnb": "^19.0.0",
     "eslint-config-prettier": "^8.3.0",
@@ -31,6 +35,7 @@
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.27.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
     "husky": "^7.0.0",
     "jest": "^27.3.1",
     "prettier": "^2.4.1"
