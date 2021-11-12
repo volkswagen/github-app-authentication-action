@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "ncc build src/index.js",
-    "test": "jest",
+    "test": "jest --coverage",
     "test-non-stop": "jest --watchAll",
     "lint": "eslint --fix 'src/**.js' 'test/**.js'",
     "prepare": "husky install"
@@ -39,5 +39,19 @@
     "husky": "^7.0.0",
     "jest": "^27.3.1",
     "prettier": "^2.4.1"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverageFrom": [
+      "src/index.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    }
   }
 }
