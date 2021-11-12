@@ -2,11 +2,12 @@
   "name": "github-app-authentication-action",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
+    "build": "ncc build src/index.js",
     "test": "jest",
     "test-non-stop": "jest --watchAll",
-    "lint": "eslint --fix src/index.js",
+    "lint": "eslint --fix 'src/**.js' 'test/**.js'",
     "prepare": "husky install"
   },
   "keywords": [
@@ -22,8 +23,16 @@
     "@octokit/auth-app": "^3.6.1"
   },
   "devDependencies": {
+    "@zeit/ncc": "^0.22.3",
     "eslint": "^8.2.0",
+    "eslint-config-airbnb": "^19.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.27.0",
+    "husky": "^7.0.0",
     "jest": "^27.3.1",
-    "husky": "^7.0.0"
+    "prettier": "^2.4.1"
   }
 }
