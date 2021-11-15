@@ -15,4 +15,4 @@ jobs:
           version: 7
           blackduck.url: ${{ secrets.BLACKDUCK_URL }}
           blackduck.api.token: ${{ secrets.BLACKDUCK_API_TOKEN }}
-          args: --blackduck.trust.cert=true
+          args: --blackduck.trust.cert=true --detect.npm.include.dev.dependencies=false --detect.detector.search.exclusion=dist,coverage,node_modules
