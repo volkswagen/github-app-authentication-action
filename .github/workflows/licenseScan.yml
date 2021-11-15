@@ -15,3 +15,4 @@ jobs:
           version: 7
           blackduck.url: ${{ secrets.BLACKDUCK_URL }}
           blackduck.api.token: ${{ secrets.BLACKDUCK_API_TOKEN }}
+          args: --insecure
