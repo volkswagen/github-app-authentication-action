@@ -1,7 +1,7 @@
 name: License Scan
 on: [push]
 jobs:
-  build:
+  license-scan:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
