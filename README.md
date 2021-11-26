@@ -3,6 +3,8 @@ Get temporary GitHub API credentials using a GitHub App
 
 [![Test](https://github.com/volkswagen/github-app-authentication-action/actions/workflows/test.yml/badge.svg)](https://github.com/volkswagen/github-app-authentication-action/actions/workflows/test.yml)
 [![System Test](https://github.com/volkswagen/github-app-authentication-action/actions/workflows/automerge.yml/badge.svg)](https://github.com/volkswagen/github-app-authentication-action/actions/workflows/automerge.yml)
+[![License Scan](https://github.com/volkswagen/github-app-authentication-action/actions/workflows/licenseScan.yml/badge.svg)](https://github.com/volkswagen/github-app-authentication-action/actions/workflows/licenseScan.yml)
+[![Security Scan](https://github.com/volkswagen/github-app-authentication-action/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/volkswagen/github-app-authentication-action/actions/workflows/codeql-analysis.yml)
 
 ## Usage
 
