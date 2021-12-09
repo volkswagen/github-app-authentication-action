@@ -8,6 +8,7 @@ Mandatory guidelines are checked automatically on commit and in GitHub Actions.
 # TLDR
 
 The key points for you as a contributor:  
+- [Code of Conduct](https://www.volkswagenag.com/presence/konzern/documents/Code_of_Conduct_Group_En.pdf)
 - [Testing](#testing)
 - [Commit messages](#commit-messages)
 
