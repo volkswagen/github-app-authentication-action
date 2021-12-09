@@ -47,6 +47,8 @@ In general we would be really happy if you use [TDD](https://en.wikipedia.org/wi
 In addition the [4-eyes principle](https://ec.europa.eu/eurostat/cros/content/four-eyes-principle_en) must be ensured and documented.  
 This is done by using Pull Requests or by using [Co-authored-by](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors) in maintainer pairing.  
 
+Test data in the repository must not contain any personal data.
+
 ### Levels of Testing
 
 In general features should be covered in three different ways:  
