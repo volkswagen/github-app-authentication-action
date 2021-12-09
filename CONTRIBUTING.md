@@ -59,6 +59,9 @@ In general features should be covered in three different ways:
 This repository is using jest for unit testing.  
 In addition a threshold is configured on test coverage to prevent a decrease over time.  
 
+At the moment this repository is at 100% test coverage. In this way the threshold is configured to 100%.  
+If you want to change that, please have good reasons for this and discuss it in advance.
+
 #### Integration Testing
 
 This repository consists of only one module, so there's nothing to integration test.  
