@@ -5,12 +5,28 @@ Great that you want to help us to make the world a better place :+1:
 The following is a set of guidelines for contributing to the GitHub App Authentication Action.  
 Mandatory guidelines are checked automatically on commit and in GitHub Actions.  
 
-# TLDR
-
-The key points for you as a contributor:  
 - [Code of Conduct](https://www.volkswagenag.com/presence/konzern/documents/Code_of_Conduct_Group_En.pdf)
-- [Testing](#testing)
+- [Found an issue](#found-an-issue-or-bug?)
+- [Missing a feature](#missing-a-feature?)
+- [Quality Concept](#quality-concept)
 - [Commit messages](#commit-messages)
+
+
+# Found an Issue or Bug?
+
+If you find a bug in the source code, you can contribute by [submitting an issue](https://github.com/volkswagen/github-app-authentication-action/issues/new?assignees=elgohr%2C+tenjaa&labels=bug&template=bug_report.md&title=%5BBUG%5D). If you want to help even more, you can submit a Pull Request with a fix.
+
+Before you submit your issue, please search the existing issues to avoid duplicates.
+
+
+# Missing a Feature?
+
+You can request a new feature by [submitting an issue](https://github.com/volkswagen/github-app-authentication-action/issues/new?assignees=elgohr%2C+tenjaa&labels=enhancement&template=feature_request.md&title=%5BFEATURE%5D).
+
+For implementing a new feature please consider the kind of change:
+
+- major changes should be discussed an issue that clearly outlines the changes and benefits of the feature
+- small changes can directly be contributed as a Pull Request, following the [Quality Concept](#quality-concept)
 
 
 # Quality Concept
