@@ -6,8 +6,8 @@ The following is a set of guidelines for contributing to the GitHub App Authenti
 Mandatory guidelines are checked automatically on commit and in GitHub Actions.  
 
 - [Code of Conduct](https://www.volkswagenag.com/presence/konzern/documents/Code_of_Conduct_Group_En.pdf)
-- [Found an issue](#found-an-issue-or-bug?)
-- [Missing a feature](#missing-a-feature?)
+- [Found an issue](#found-an-issue-or-bug)
+- [Missing a feature](#missing-a-feature)
 - [Quality Concept](#quality-concept)
 - [Commit messages](#commit-messages)
 
