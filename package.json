@@ -1,7 +1,7 @@
 {
   "name": "github-app-authentication-action",
   "version": "1.0.0",
-  "description": "",
+  "description": "Get temporary GitHub API credentials inside GitHub Actions using a GitHub App",
   "main": "dist/index.js",
   "scripts": {
     "build": "ncc build src/index.js",
