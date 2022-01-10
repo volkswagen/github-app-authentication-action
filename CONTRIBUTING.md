@@ -32,6 +32,7 @@ For implementing a new feature please consider the kind of change:
 # Quality Concept
 
 The following section describes how we want to ensure that this repository keeps or improves the quality over time.  
+This is also aligned with ISO/IEC 25010.
 
 ## Coding
 
@@ -42,7 +43,7 @@ Try to follow the SOLID principles of [clean code](https://medium.com/mindorks/h
 To ensure a constant quality and development speed all tests must be implemented and executed automatically.  
 In this context tests act as criteria for accepting a feature, which also prevents features from being changed or deleted without a test being red.  
 For getting a fast feedback tests must be run before commiting. For making sure that this really happens, GitHub Actions runs tests on every commit.  
-In general we would be really happy if you use [TDD](https://en.wikipedia.org/wiki/Test-driven_development) for your development.  
+In general we would be really happy if you use [TDD](https://en.wikipedia.org/wiki/Test-driven_development) or any other style of [shift left testing](https://en.wikipedia.org/wiki/Shift-left_testing) for your development.  
 
 In addition the [4-eyes principle](https://ec.europa.eu/eurostat/cros/content/four-eyes-principle_en) must be ensured and documented.  
 This is done by using Pull Requests or by using [Co-authored-by](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors) in maintainer pairing.  
@@ -73,6 +74,19 @@ This repository consists of only one module, so there's nothing to integration t
 Every commit that is triggered by Dependabot is automerged.  
 In this context this action [uses itself](https://github.com/volkswagen/github-app-authentication-action/blob/main/.github/workflows/automerge.yml) to get the necessary token.  
 
+### Testing environment
+
+At least unit and integration tests must be executable on a local development environment.  
+All levels of testing must be executed in GitHub actions.
+
+### Entry and exit criteria
+
+For starting the tests the repository needs to be pulled.  
+At least the latest LTS version of Node.js must be present on the machine.  
+Afterwards `npm install` and `npm run test` need to be performed.  
+
+On commit multiple checks are automatically executed by Husky.  
+If one of these checks fails, the commit is aborted.  
 
 ## Linting
 
