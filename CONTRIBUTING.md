@@ -107,7 +107,7 @@ This repository is using Dependabot in combination with GitHub Actions for perfo
 
 ### Software licenses
 
-All dependecies must be checked for software license compliance.  
+All dependecies must be checked for software license compliance and aligned to the repository license.  
 In the case of a violation the dependency must not be used or accepted.  
 
 On every change the licenses and transitive licenses of every dependencies are checked by an internal tool.  
