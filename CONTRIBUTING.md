@@ -43,7 +43,7 @@ Try to follow the SOLID principles of [clean code](https://medium.com/mindorks/h
 To ensure a constant quality and development speed all tests must be implemented and executed automatically.  
 In this context tests act as criteria for accepting a feature, which also prevents features from being changed or deleted without a test being red.  
 For getting a fast feedback tests must be run before commiting. For making sure that this really happens, GitHub Actions runs tests on every commit.  
-In general we would be really happy if you use [TDD](https://en.wikipedia.org/wiki/Test-driven_development) or any other style of [shift left testing](https://en.wikipedia.org/wiki/Shift-left_testing) for your development.  
+In general we would be really happy if you use [TDD](https://en.wikipedia.org/wiki/Test-driven_development) or any other style of [shift left testing](https://snyk.io/learn/shift-left-testing/) for your development.  
 
 In addition the [4-eyes principle](https://ec.europa.eu/eurostat/cros/content/four-eyes-principle_en) must be ensured and documented.  
 This is done by using Pull Requests or by using [Co-authored-by](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors) in maintainer pairing.  
