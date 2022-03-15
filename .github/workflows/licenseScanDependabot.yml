@@ -1,8 +1,6 @@
 name: License Scan
-on:
-  pull_request_target:
-    branches: [ main ]
-    types: [ opened ]
+on: [ pull_request_target ]
+
 jobs:
   license-scan:
     runs-on: ubuntu-latest
