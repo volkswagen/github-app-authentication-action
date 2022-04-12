@@ -1,14 +1,14 @@
 name: Test
 on:
   push:
-    branches:
-    - main
+    branches: [ main ]
   pull_request:
-    branches:
-    - main
+    branches: [ main ]
 jobs:
   unit-test:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     timeout-minutes: 2
     steps:
     - uses: actions/checkout@v2
@@ -17,3 +17,61 @@ jobs:
         node-version: '14'
     - run: npm ci
     - run: npm test
+
+  security-test:
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+    steps:
+    - uses: actions/checkout@v2 
+    - uses: github/codeql-action/init@v1
+      with:
+        languages: 'javascript'
+    - uses: github/codeql-action/analyze@v1
+
+  license-scan:
+    runs-on: ubuntu-latest
+    if: github.event_name != 'pull_request'
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - run: npm ci
+      - uses: blackducksoftware/github-action@v2.2
+        with:
+          version: 7
+          blackduck.url: ${{ secrets.BLACKDUCK_URL }}
+          blackduck.api.token: ${{ secrets.BLACKDUCK_API_TOKEN }}
+          args: >
+            --blackduck.trust.cert=true
+            --detect.project.tags=WEK
+            --detect.policy.check.fail.on.severities="BLOCKER"
+            --detect.npm.include.dev.dependencies=false
+            --detect.detector.search.exclusion=dist,coverage,node_modules
+
+  release:
+    runs-on: ubuntu-latest
+    needs: [unit-test, security-test, license-scan]
+    steps:
+      - id: authentication
+        uses: volkswagen/github-app-authentication-action@v1
+        with:
+          appId: ${{ secrets.APP_ID }}
+          clientId: ${{ secrets.CLIENT_ID }}
+          clientSecret: ${{ secrets.CLIENT_SECRET }}
+          privateKey: ${{ secrets.PRIVATE_KEY }}
+          installationId: ${{ secrets.INSTALLATION_ID }}
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ steps.authentication.outputs.token }} # for pushing to protected branch
+      - name: Publish new version
+        run: |
+          git config --global user.email "bot@volkswagen.de"
+          git config --global user.name "Release Bot"
+          git tag -fa v1 -m "Update v1 tag"
+          git push origin v1 --force
