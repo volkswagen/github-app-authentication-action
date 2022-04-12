@@ -1,0 +1,27 @@
+name: Release
+on:
+  workflow_run:
+    workflows: [ "Test", "CodeQL", "License Scan" ]
+    branches: [ main ]
+    types: [ completed ]
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - name: Authenticate via APP
+        id: authentication
+        uses: ./
+        with:
+          appId: ${{ secrets.APP_ID }}
+          clientId: ${{ secrets.CLIENT_ID }}
+          clientSecret: ${{ secrets.CLIENT_SECRET }}
+          privateKey: ${{ secrets.PRIVATE_KEY }}
+          installationId: ${{ secrets.INSTALLATION_ID }}
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ steps.authentication.outputs.token }} # for pushing to protected branch
+      - name: Publish new version
+        run: |
+          git tag -fa v1 -m "Update v1 tag"
+          git push origin v1 --force
