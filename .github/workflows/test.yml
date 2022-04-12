@@ -60,7 +60,7 @@ jobs:
     needs: [unit-test, security-test, license-scan]
     steps:
       - id: authentication
-        uses: volkswagen/github-app-authentication-action@v1
+        uses: volkswagen/github-app-authentication-action@main
         with:
           appId: ${{ secrets.APP_ID }}
           clientId: ${{ secrets.CLIENT_ID }}
