@@ -18,7 +18,7 @@ jobs:
     steps:
     - name: Authenticate
       id: authenticate
-      uses: volkswagen/github-app-authentication-app@v1
+      uses: volkswagen/github-app-authentication-action@v1
       with:
         appId: ${{ secrets.APP_ID }}
         clientId: ${{ secrets.CLIENT_ID }}
