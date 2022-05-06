@@ -22,7 +22,7 @@
   "author": "Lars Gohr <elgohr@oss.volkswagen.com>",
   "license": "MIT",
   "dependencies": {
-    "@actions/core": "^1.7.0",
+    "@actions/core": "^1.8.0",
     "@actions/github": "^5.0.1",
     "@octokit/auth-app": "^3.6.1"
   },
