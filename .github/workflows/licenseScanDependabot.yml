@@ -12,14 +12,16 @@ jobs:
           node-version: '14'
       - run: npm ci
       - name: Synopsys Detect
-        uses: blackducksoftware/github-action@v2.2
+        uses: synopsys-sig/detect-action@v0.3.2
+        env:
+          NODE_TLS_REJECT_UNAUTHORIZED: 0
+          DETECT_PROJECT_TAGS: WEK
+          DETECT_POLICY_CHECK_FAIL_ON_SEVERITIES: "BLOCKER"
+          DETECT_NPM_INCLUDE_DEV_DEPENDENCIES: false
+          DETECT_DETECTOR_SEARCH_EXCLUSION: 'dist,coverage,node_modules'
         with:
-          version: 7
-          blackduck.url: ${{ secrets.BLACKDUCK_URL }}
-          blackduck.api.token: ${{ secrets.BLACKDUCK_API_TOKEN }}
-          args: >
-            --blackduck.trust.cert=true
-            --detect.project.tags=WEK
-            --detect.policy.check.fail.on.severities="BLOCKER"
-            --detect.npm.include.dev.dependencies=false
-            --detect.detector.search.exclusion=dist,coverage,node_modules
+          detect-version: 7
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          blackduck-url: ${{ secrets.BLACKDUCK_URL }}
+          blackduck-api-token: ${{ secrets.BLACKDUCK_API_TOKEN }}
+          detect-trust-cert: true
