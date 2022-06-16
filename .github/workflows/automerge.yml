@@ -18,7 +18,6 @@ jobs:
         with:
           appId: ${{ secrets.APP_ID }}
           clientId: ${{ secrets.CLIENT_ID }}
-          clientSecret: ${{ secrets.CLIENT_SECRET }}
           privateKey: ${{ secrets.PRIVATE_KEY }}
           installationId: ${{ secrets.INSTALLATION_ID }}
       - name: Enable auto-merge for Dependabot PRs

@@ -64,7 +64,7 @@ jobs:
         with:
           appId: ${{ secrets.APP_ID }}
           clientId: ${{ secrets.CLIENT_ID }}
-          clientSecret: ${{ secrets.CLIENT_SECRET }}
+          clientSecret: "ANY" # for compatebility testing with old version that required this
           privateKey: ${{ secrets.PRIVATE_KEY }}
           installationId: ${{ secrets.INSTALLATION_ID }}
       - uses: actions/checkout@v3

@@ -22,7 +22,6 @@ jobs:
       with:
         appId: ${{ secrets.APP_ID }}
         clientId: ${{ secrets.CLIENT_ID }}
-        clientSecret: ${{ secrets.CLIENT_SECRET }}
         privateKey: ${{ secrets.PRIVATE_KEY }}
         installationId: ${{ secrets.INSTALLATION_ID }}
     - name: Another Job 
@@ -36,7 +35,6 @@ jobs:
 `appId` is the app ID of the GitHub App (see App Settings > General > About)  
 `clientId` the client ID of the GitHub App (see App Settings > General > About, e.g. Iv1.*********)  
 `privateKey` the private key of the GitHub App  
-`clientSecret` the client secret of the GitHub App  
 `installationId` the installation id of the GitHub App  
 
 ## Outputs

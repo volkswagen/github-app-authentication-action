@@ -7,8 +7,7 @@ async function authenticate(authFunc, getInputFunc, setOutputFunc, setFailedFunc
     const auth = authFunc({
       appId: getInputFunc('appId', { required: true }),
       privateKey: getInputFunc('privateKey', { required: true }),
-      clientId: getInputFunc('clientId', { required: true }),
-      clientSecret: getInputFunc('clientSecret', { required: true })
+      clientId: getInputFunc('clientId', { required: true })
     });
     const installationAuthentication = await auth({
       type: 'installation',

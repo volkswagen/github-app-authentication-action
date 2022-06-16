@@ -19,8 +19,7 @@ describe('authenticate', () => {
       .mockReturnValueOnce('InstallationID')
       .mockReturnValueOnce('AppID')
       .mockReturnValueOnce('PrivateKey')
-      .mockReturnValueOnce('ClientId')
-      .mockReturnValueOnce('ClientSecret');
+      .mockReturnValueOnce('ClientId');
 
     await authenticate(authMock, getInputMock, setOutputMock, setFailedMock);
 
@@ -28,11 +27,10 @@ describe('authenticate', () => {
     expect(authMock.mock.calls[0][0]).toStrictEqual({
       appId: 'AppID',
       privateKey: 'PrivateKey',
-      clientId: 'ClientId',
-      clientSecret: 'ClientSecret'
+      clientId: 'ClientId'
     });
 
-    expect(getInputMock.mock.calls.length).toBe(5);
+    expect(getInputMock.mock.calls.length).toBe(4);
     expect(getInputMock.mock.calls[0][0]).toBe('installationId');
     expect(getInputMock.mock.calls[0][1]).toStrictEqual({ required: true });
     expect(getInputMock.mock.calls[1][0]).toBe('appId');
@@ -41,8 +39,6 @@ describe('authenticate', () => {
     expect(getInputMock.mock.calls[2][1]).toStrictEqual({ required: true });
     expect(getInputMock.mock.calls[3][0]).toBe('clientId');
     expect(getInputMock.mock.calls[3][1]).toStrictEqual({ required: true });
-    expect(getInputMock.mock.calls[4][0]).toBe('clientSecret');
-    expect(getInputMock.mock.calls[4][1]).toStrictEqual({ required: true });
 
     expect(setOutputMock.mock.calls.length).toBe(1);
     expect(setOutputMock.mock.calls[0][0]).toBe('token');
@@ -55,8 +51,7 @@ describe('authenticate', () => {
     ['appId', 0],
     ['privateKey', 1],
     ['clientId', 2],
-    ['clientSecret', 3],
-    ['installationId', 4]
+    ['installationId', 3]
   ];
 
   test.each(wrongInputCases)('when input %s is missing', async (parameter, number) => {
@@ -104,8 +99,7 @@ describe('authenticate', () => {
       .mockReturnValueOnce('InstallationID')
       .mockReturnValueOnce('AppID')
       .mockReturnValueOnce('PrivateKey')
-      .mockReturnValueOnce('ClientId')
-      .mockReturnValueOnce('ClientSecret');
+      .mockReturnValueOnce('ClientId');
 
     await authenticate(authMock, getInputMock, setOutputMock, setFailedMock);
 
@@ -114,10 +108,9 @@ describe('authenticate', () => {
       appId: 'AppID',
       privateKey: 'PrivateKey',
       clientId: 'ClientId',
-      clientSecret: 'ClientSecret'
     });
 
-    expect(getInputMock.mock.calls.length).toBe(5);
+    expect(getInputMock.mock.calls.length).toBe(4);
     expect(setOutputMock.mock.calls.length).toBe(0);
     expect(setFailedMock.mock.calls.length).toBe(1);
     expect(setFailedMock.mock.calls[0][0]).toBe('auth fails');

@@ -7,9 +7,6 @@ inputs:
   clientId:
     description: 'Client ID of the GitHub App (e.g. Iv1.*********)'
     required: true
-  clientSecret:
-    description: 'Client secret of the GitHub App'
-    required: true
   privateKey:
     description: 'Private key of the GitHub App'
     required: true
