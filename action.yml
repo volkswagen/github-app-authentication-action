@@ -20,5 +20,5 @@ outputs:
   token:
     description: 'An access token that can be used to call the GitHub API'
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'dist/index.js'
