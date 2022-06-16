@@ -107,7 +107,7 @@ describe('authenticate', () => {
     expect(authMock.mock.calls[0][0]).toStrictEqual({
       appId: 'AppID',
       privateKey: 'PrivateKey',
-      clientId: 'ClientId',
+      clientId: 'ClientId'
     });
 
     expect(getInputMock.mock.calls.length).toBe(4);
