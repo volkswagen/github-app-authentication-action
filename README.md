@@ -27,7 +27,7 @@ jobs:
     - name: Another Job 
       uses: something_else
       with:
-        token: ${{ steps.authenticate.output.token }}
+        token: ${{ steps.authenticate.outputs.token }}
 ```
 
 ## Mandatory Arguments
