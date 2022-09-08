@@ -15,10 +15,10 @@ jobs:
         uses: synopsys-sig/detect-action@v0.3.2
         env:
           NODE_TLS_REJECT_UNAUTHORIZED: 0
-          DETECT_PROJECT_TAGS: WEK
-          DETECT_POLICY_CHECK_FAIL_ON_SEVERITIES: "BLOCKER"
+          DETECT_PROJECT_TAGS: 'wek'
+          DETECT_POLICY_CHECK_FAIL_ON_SEVERITIES: 'BLOCKER'
           DETECT_NPM_INCLUDE_DEV_DEPENDENCIES: false
-          DETECT_DETECTOR_SEARCH_EXCLUSION: 'dist,coverage,node_modules'
+          DETECT_EXCLUDED_DIRECTORIES: 'dist,coverage,node_modules'
         with:
           detect-version: 7.13.2
           github-token: ${{ secrets.GITHUB_TOKEN }}
