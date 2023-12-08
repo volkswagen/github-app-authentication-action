@@ -43,7 +43,7 @@
   "jest": {
     "testEnvironment": "node",
     "collectCoverageFrom": [
-      "src/index.js"
+      "src/authenticate.js"
     ],
     "coverageThreshold": {
       "global": {
