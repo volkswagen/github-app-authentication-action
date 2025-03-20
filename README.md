@@ -1,6 +1,9 @@
+# DEPRECATED
+In the meantime, GitHub released an [official Action](https://github.com/actions/create-github-app-token) to get a token from a GitHub App installation.
+Therefore we will deprecate this Action.
+
 # GitHub App Authentication Action
 Get temporary GitHub API credentials using a GitHub App
-
 [![Test](https://github.com/volkswagen/github-app-authentication-action/actions/workflows/test.yml/badge.svg)](https://github.com/volkswagen/github-app-authentication-action/actions/workflows/test.yml)
 [![System Test](https://github.com/volkswagen/github-app-authentication-action/actions/workflows/automerge.yml/badge.svg)](https://github.com/volkswagen/github-app-authentication-action/actions/workflows/automerge.yml)
 
